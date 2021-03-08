@@ -25,7 +25,7 @@ example template:
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script>
-        // pure react
+        // pure React
     </script>
 </body>
 </html>
@@ -47,3 +47,26 @@ React manages DOM changes to create performant SPAs
 * supposdely faster to interact with JS objects & let React manage the DOM API
 
 ## React Elements
+React elements are a description of what a DOM element should look like  
+```js
+// normal DOM API
+const h1 = document.createElement("h1")
+h1.textContent = "Baked Salmon"
+
+// pure React
+React.createElement("h1", null, "Baked Salmon")
+
+// <h1>Baked Salmon</h1>
+```
+`React.createElement` accepts three arguments; the node type, element properties, and children  
+example properties:
+```js
+React.createElement("h1", {
+    "id": "recipe",
+    "data-type": "title"
+}, "Baked Salmon")
+
+// <h1 id="recipe" data-type="title">Baked Salmon</h1>
+```
+
+## ReactDOM
