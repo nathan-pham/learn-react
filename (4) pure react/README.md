@@ -1,14 +1,14 @@
 # Pure React
-Knowing how React works behind the scenes will help you understand how React runs in the browser  
+knowing how React works behind the scenes will help you understand how React runs in the browser  
 
 ## Page Setup
 React: library for creating views  
 ReactDOM: render UI to the browser  
-The packages are split to exted rendering to other platforms  
+the packages are split to exted rendering to other platforms  
 
 ## CDN
-Web safe versions of React & ReactDOM can be found on the [react page](https://reactjs.org/docs/cdn-links.html)  
-Example template: 
+web safe versions of React & ReactDOM can be found on the [react page](https://reactjs.org/docs/cdn-links.html)  
+example template: 
 ```html
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,9 @@ Example template:
     <title>Pure React</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <!-- container necessary to render React components -->
+    </div>
     
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
@@ -28,3 +30,20 @@ Example template:
 </body>
 </html>
 ```
+
+## The Virtual DOM
+HTML is interpreted to create a document object model (DOM) that looks like a tree  
+AJAX -> single page application, or SPA  
+* web applications run out of a single page, JS updates interface
+* initially loads one HTML document, JS destroys and creates new user interfaces  
+
+DOM API: collection of objects used to ineract with the DOM
+* `document.createElement` or `document.appendChild` are example components of the DOM API  
+* updating elements is easy but inserting new elements are slow
+
+React manages DOM changes to create performant SPAs
+* interact with the virtual DOM, which React interprets to construct the UI
+* made of React elements represented by JS objects
+* supposdely faster to interact with JS objects & let React manage the DOM API
+
+## React Elements
