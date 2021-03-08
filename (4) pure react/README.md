@@ -8,7 +8,6 @@ the packages are split to exted rendering to other platforms
 
 ## CDN
 web safe versions of React & ReactDOM can be found on the [react page](https://reactjs.org/docs/cdn-links.html)  
-example template: 
 ```html
 <!DOCTYPE html>
 <html>
@@ -59,7 +58,6 @@ React.createElement("h1", null, "Baked Salmon")
 // <h1>Baked Salmon</h1>
 ```
 `React.createElement` accepts three arguments; the node type, element properties, and children  
-example properties:
 ```js
 React.createElement("h1", {
     "id": "recipe",
@@ -70,3 +68,12 @@ React.createElement("h1", {
 ```
 
 ## ReactDOM
+contains tools needed to render React elements  
+generates HTML  
+`ReactDOM.render` accepts two arguments, the React element and target container.  
+```js
+const app = React.createElement("h1", null, "Baked Salmon")
+ReactDOM.render(app, document.createElement("root"))
+```
+
+## Children
