@@ -10,8 +10,30 @@
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script>
-        const app = React.createElement("h1", null, "Hello World")
-        ReactDOM.render(app, document.getElementById("root"))
+        class IngredientsList extends React.Component {
+    createListItem(ingredient, key) {
+        return React.createElement("li", { key }, ingredient)
+    }
+    render() {
+        return React.createElement("ul", { className: "ingredients" },
+            this.props.items.map(this.createListItem)
+        )
+    }
+}
+
+const items = [
+    "1 lb Salmon",
+    "1 cup Pine Nutes",
+    "2 cups Butter Lettuce",
+    "1 Yellow Squash",
+    "1/2 cup Olive Oil",
+    "3 cloves of Garlic"
+]
+
+ReactDOM.render(
+    React.createElement(IngredientsList, { items }, null),
+    document.getElementById("root")
+)
     </script>
 </body>
 </html>

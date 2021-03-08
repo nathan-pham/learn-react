@@ -77,3 +77,105 @@ ReactDOM.render(app, document.createElement("root"))
 ```
 
 ## Children
+ReactDOM renders a single element to the DOM, other elements are added through nesting  
+`props.children` contains child elements  
+* "Baked Salmon" was a child text node  
+* creates a tree of elements -> component tree
+
+```js
+React.createElement("ul", null,
+    React.createElement("li", null, "1 lb Salmon"),
+    React.createElement("li", null, "1 cup Pine Nutes")
+    React.createElement("li", null, "2 cups Butter Lettuce")
+    React.createElement("li", null, "1 Yellow Squash")
+    React.createElement("li", null, "1/2 cup Olive Oil")
+    React.createElement("li", null, "3 cloves of Garlic")
+)
+
+// basic virtual dom result
+{
+    type: "ul",
+    props: {
+        children: [
+            { type: "li", "props": { children: "1 lb Salmon" } },
+            { type: "li", "props": { children: "1 cup Pine Nutes" } },
+            { type: "li", "props": { children: "2 cups Butter Lettuce" } },
+            { type: "li", "props": { children: "1 Yellow Squash" } },
+            { type: "li", "props": { children: "1/2 cup Olive Oil" } },
+            { type: "li", "props": { children: "3 cloves of Garlic" } }
+        ]
+    }
+}
+```
+
+## Constructing Elements with Data
+React allows you to separate data from UI  
+* store data in an array and map it into a React element  
+
+```js
+const items = [
+    "1 lb Salmon",
+    "1 cup Pine Nutes",
+    "2 cups Butter Lettuce",
+    "1 Yellow Squash",
+    "1/2 cup Olive Oil",
+    "3 cloves of Garlic"
+]
+
+React.createElement("ul", null,
+    items.map((ingredient, key) => (
+        React.createElement("li", { key }, ingredient)
+    ))
+)
+```
+
+## React Components
+all interfaces are made of parts, or components  
+* reuse the same DOM structure with different data
+* very scalable and easy to maintain  
+
+## React.createClass
+depreciated method to create components
+
+## React.Component
+```js
+class IngredientsList extends React.Component {
+    createListItem(ingredient, key) {
+        return React.createElement("li", { key }, ingredient)
+    }
+    render() {
+        return React.createElement("ul", { className: "ingredients" },
+            this.props.items.map(this.createListItem)
+        )
+    }
+}
+
+const items = [
+    "1 lb Salmon",
+    "1 cup Pine Nutes",
+    "2 cups Butter Lettuce",
+    "1 Yellow Squash",
+    "1/2 cup Olive Oil",
+    "3 cloves of Garlic"
+]
+
+ReactDOM.render(
+    React.createElement(IngredientsList, { items }, null),
+    document.getElementById("root")
+)
+```
+
+## Stateless Functional Components
+functions that return a React element  
+should be pure & limit side effects  
+```js
+const IngredientsList = ({ items }) => (
+    React.createElement("ul", { className: "ingredients" },
+        items.map((ingredient, key) => (
+            React.createElement("li", { key }, ingredient)
+        ))
+    )
+)
+```
+
+## DOM Rendering
