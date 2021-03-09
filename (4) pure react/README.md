@@ -179,3 +179,29 @@ const IngredientsList = ({ items }) => (
 ```
 
 ## DOM Rendering
+rerenders component when data changes  
+instead of purging & refilling the DOM, React makes the least amount of changes  
+* updating existing DOM elements is faster than replacing them  
+
+## Factories
+factories: abstract object creation  
+first argument is properties, second is children  
+```js
+React.DOM.h1(null, "Baked Salmon")
+```
+
+you could explicitly create a factory with a custom component  
+```js
+const { render } = ReactDOM
+
+const IngredientsList({ list }) => (
+    React.createElement("ul", null,
+        list.map((ingredient, key) => React.createElement("li", { key }, ingredient))
+    )
+)
+
+const Component = React.createFactory(IngredientsList)
+const list = [...]
+
+render(Component(list), document.getElementById("root"))
+```
