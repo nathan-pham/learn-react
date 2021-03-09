@@ -57,3 +57,6 @@ linking the `babel-core` with a CDN will transpile & run any code with a `text/b
 * not ideal for production  
 * easy to start 
 
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.min.js"></script>
+```
