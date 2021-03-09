@@ -60,3 +60,12 @@ linking the `babel-core` with a CDN will transpile & run any code with a `text/b
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.min.js"></script>
 ```
+
+## Recipes as JSX
+remember to use `key` in mapped child components  
+
+## Babel Presets
+Babel 6 introduced presets that allow you to define which transformations should be applied  
+generally use `babel-preset-es2015`, `babel-preset-es2016`, `babel-preset-env`, or `babel-preset-react`  
+
+## Intro to Webpack
