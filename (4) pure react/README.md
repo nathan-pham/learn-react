@@ -194,7 +194,7 @@ you could explicitly create a factory with a custom component
 ```js
 const { render } = ReactDOM
 
-const IngredientsList({ list }) => (
+const IngredientsList = ({ list }) => (
     React.createElement("ul", null,
         list.map((ingredient, key) => React.createElement("li", { key }, ingredient))
     )
