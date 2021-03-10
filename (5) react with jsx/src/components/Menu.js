@@ -1,4 +1,5 @@
 import Recipe from "./Recipe"
+import "../styles/Menu.css"
 
 const Menu = ({ recipes }) => (
     <article>

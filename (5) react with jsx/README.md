@@ -184,3 +184,40 @@ module.exports = {
     }
 }
 ```
+
+## Bundling CSS
+can be included with `import` statements  
+`npm install style-loader css-loader postcss-loader postcss-preset-env --save-dev`
+```js
+// webpack.config.js
+module.exports = {
+    ...
+    module: {
+        rules: [
+            ...
+            {
+                test: /\.css$/,
+                use: [ "style-loader", "css-loader", {
+                    loader: "postcss-loader",
+                    options: {
+                        postcssOptions: {
+                            plugins: [ "postcss-preset-env" ]
+                        }
+                    }
+                }]
+            }
+        ]
+    }
+}
+```
+
+## create-react-app
+CLI used to generate a React project  
+`npm install -g create-react-app`  
+`create-react-app .`
+installs Rect, ReactDOM, and react-scripts
+* react-scripts: autoinstalls Webpack, Babel, ESLint, etc.  
+* src/App.js is where you import & edit components
+* run `npm start` to initialize a live preview
+* run `npm build` to make production-ready bundles
+
