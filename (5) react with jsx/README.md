@@ -71,14 +71,95 @@ generally use `babel-preset-es2015`, `babel-preset-es2016`, `babel-preset-env`, 
 ## Intro to Webpack
 Webpack: module bundler that manages JSX, ES6 tranformations, dependencies, images and CSS  
 * "builds" everything into one file
-* reduces latency (improves network performance)
-* handles minification, feature flagging, hot module replacement (HMR)
-* code splitting (split code into "rollups" that load on different pages/devices)
+* speed: reduces latency & handles minification
+* also manages feature flagging, hot module replacement (HMR), code splitting (split code into "rollups" that load on different pages/devices)
+* composing: create reusable React components that can integrate easily with other applications
+* consistency: use bleeding-edge JS today
 
-## Webpack Loaders
+### Webpack Loaders
 loader: handles transformations, added to `webpack.config.js`  
 * `babel-loader` transpiles React & ES6  
 * `css-loader` includes CSS into bundles  
 
+## Recipes App with a Webpack Build
+using webpack alleviates performance issues with just including a CDN  
 
+### Installing Webpack Dependencies
+`npm install webpack webpack-cli @babel/core @babel/preset-env @babel/preset-react babel-loader --save-dev`  
+`npm install react react-dom --save`  
 
+### Webpack Configuration
+tell Webpack how to bundle file in `webpack.config.js`  
+example Webpack build:
+1. JSX -> pure React elements
+2. transpile ES6 -> ES5
+3. export to one file -> bundle.js
+
+```js
+// webpack.config.js
+const path = require("path")
+
+module.exports = {
+    mode: "development",
+    entry: {
+        main: path.join(__dirname, "./src/index.js")
+    },
+    output: {
+       path: path.join(__dirname, "./dist"),
+       filename: "[name].bundle.js" 
+    },
+    module: {
+        rules: [{
+            test: /\.(js|jsx)$/,
+            exclude: /(node_modules)/,
+            use: [ "babel-loader" ],
+            // query: {
+            //     presets: [ "env", "react" ]
+            // }
+        }]
+    },
+    resolve: {
+        extensions: ['*', ".js", ".jsx"]
+    }
+}
+```
+
+### Configure Babel
+add presets in `babel.config.json`
+```js
+// babel.config.json
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ]
+}
+```
+
+### Loading the Bundle
+scripts are exported to the `dist` folder  
+you should place an `index.html` file here where the React components should be mounted
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React Recipes App</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="main.bundle.js"></script>
+</body>
+</html>
+```
+
+### Source Mapping
+bundling code makes it hard to debug apps  
+source map: maps bundle to original files  
+```js
+module.exports = {
+    ...
+    devtool: "eval-source-map"
+}
+```
