@@ -13,13 +13,11 @@ module.exports = {
         rules: [{
             test: /\.(js|jsx)$/,
             exclude: /(node_modules)/,
-            use: [ "babel-loader" ],
-            // query: {
-            //     presets: [ "env", "react" ]
-            // }
+            use: [ "babel-loader" ]
         }]
     },
     resolve: {
         extensions: ['*', ".js", ".jsx"]
     }
+    // devtool: "eval-source-map"
 }

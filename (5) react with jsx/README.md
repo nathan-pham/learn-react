@@ -157,9 +157,12 @@ you should place an `index.html` file here where the React components should be 
 ### Source Mapping
 bundling code makes it hard to debug apps  
 source map: maps bundle to original files  
+not intended for production  
 ```js
 module.exports = {
     ...
     devtool: "eval-source-map"
 }
 ```
+
+### Optimizing the Bundle
