@@ -66,7 +66,7 @@ remember to use `key` in mapped child components
 
 ## Babel Presets
 Babel 6 introduced presets that allow you to define which transformations should be applied  
-generally use `babel-preset-es2015`, `babel-preset-es2016`, `babel-preset-env`, or `babel-preset-react`  
+generally use `@babel/preset-env`, or `@babel/preset-react`  
 
 ## Intro to Webpack
 Webpack: module bundler that manages JSX, ES6 tranformations, dependencies, images and CSS  
