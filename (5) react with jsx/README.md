@@ -69,3 +69,16 @@ Babel 6 introduced presets that allow you to define which transformations should
 generally use `babel-preset-es2015`, `babel-preset-es2016`, `babel-preset-env`, or `babel-preset-react`  
 
 ## Intro to Webpack
+Webpack: module bundler that manages JSX, ES6 tranformations, dependencies, images and CSS  
+* "builds" everything into one file
+* reduces latency (improves network performance)
+* handles minification, feature flagging, hot module replacement (HMR)
+* code splitting (split code into "rollups" that load on different pages/devices)
+
+## Webpack Loaders
+loader: handles transformations, added to `webpack.config.js`  
+* `babel-loader` transpiles React & ES6  
+* `css-loader` includes CSS into bundles  
+
+
+
