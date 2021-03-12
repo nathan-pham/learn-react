@@ -107,7 +107,7 @@ class ColorForm extends Component {
     }
     render() {
         return (
-            <form onSubmit={(e) => e.preventDefault()}>
+            <form onSubmit={ this.submit }>
                 <input ref="title" type="text" placeholder="color title" required />
                 <input ref="color" type="color" required />
                 <button>ADD</button>
@@ -233,3 +233,36 @@ points -> polygon
 application state: grouping all state data within the root component & passing it along with two-way function binding  
 
 ### Color Organizer App Overview
+add, name, rate & remove colors  
+represented with an array
+```js
+const colors = [
+    {
+        id: "uid",
+        title: "ocean at dusk",
+        color: "#00c4e2",
+        rating: 5
+    }
+]
+```
+
+### Passing Properties Down the Component Tree
+presentational component: stateless, defines how things should look  
+* data is sent via properties, no state  
+* sometimes keeping state in a presentational component is a good idea  
+* let app handle state
+
+```js
+const StarRating = ({ selected=0, total=5, onRate=(f) => f }) => (
+    <div className="star-wrapper">
+        {[...Array(total)].map((_, i) => <Star key={ i } selected={ i < selected } onClick={ () => onRate(i + 1) } />)}
+    </div>
+)
+```
+
+### Passing Data Back Up the Component Tree
+using callback functions  
+two way binding is complicated & time consuming  
+Flux design pattern (Redux) can help reduce state management difficulties  
+[color app](https://codepen.io/nathan-pham/pen/jOVdaMX)  
+
