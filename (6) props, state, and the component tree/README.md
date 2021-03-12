@@ -187,6 +187,7 @@ changing & rerendering UI is a reflection of state
 ## Introducing Component State
 state is changing data  
 statless components cannot rerender (unless you use hooks)  
+working [codepen](https://codepen.io/nathan-pham/pen/poNGzZx)
 ```js
 const Star = ({ selected=false, onClick=(f) => f }) => {
     <div className={ selected ? "star selected" : "star" } onClick={ onClick }></div>
@@ -227,3 +228,8 @@ points -> polygon
     background-color: red;
 }
 ```
+
+## State Within the Component Tree
+application state: grouping all state data within the root component & passing it along with two-way function binding  
+
+### Color Organizer App Overview
