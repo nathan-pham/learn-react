@@ -17,7 +17,7 @@ React no longer has property validation; import from `prop-types`
 using ES6 classes
 ```js
 import { Component } from "react"
-import PropTypes as types from "prop-types"
+import * as types from "prop-types"
 
 class Summary extends Component {
     static propTypes = {
