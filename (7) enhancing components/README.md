@@ -49,7 +49,7 @@ do not call within an update lifecycle; it will cause an infinite recursive loop
 * `shouldComponentUpdate(nextProps, nextState)`: only used to alter default behavior of rerendering; returning false will prevent rendering
 * `componentDidUpdate(prevProps, prevState)`: invoked after DOM rerenders
 
-## React.Children
+### React.Children
 interact with child components  
 map, loop, or convert `props.children` to an array  
 `React.Children.only` verifies only a single child is displayed  
@@ -74,3 +74,8 @@ render(
     document.getElementById("root")
 )
 ```
+you can also use `React.Children` to convert elements into an array (which is useful to filter out elements)
+[React.Children example](https://codepen.io/nathan-pham/pen/NWbmdbX)
+
+
+## 
