@@ -93,5 +93,6 @@ natively supported or polfill with `isomorphic-fetch`
 
 ### Incorporating a D3 Timeline
 Data Drive Documents (D3): JS framework for data visualizations  
-`npm install d3 --save`
-
+`npm install d3 --save`  
+[d3 componentDidMount](https://codepen.io/nathan-pham/pen/BaQerzQ)   
+[d3 React UI](https://codepen.io/nathan-pham/pen/eYBaMKb)
