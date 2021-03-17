@@ -96,3 +96,11 @@ Data Drive Documents (D3): JS framework for data visualizations
 `npm install d3 --save`  
 [d3 componentDidMount](https://codepen.io/nathan-pham/pen/BaQerzQ)   
 [d3 React UI](https://codepen.io/nathan-pham/pen/eYBaMKb)
+
+## Higher-Order Components
+higher-order component (HOC): React component that receives another component as an argument  
+* wrap component in a class with state management
+* reuse functionality  
+* wrap components with components
+
+
