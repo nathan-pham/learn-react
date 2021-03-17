@@ -74,8 +74,24 @@ render(
     document.getElementById("root")
 )
 ```
-you can also use `React.Children` to convert elements into an array (which is useful to filter out elements)
+you can also use `React.Children` to convert elements into an array (which is useful to filter out elements)  
 [React.Children example](https://codepen.io/nathan-pham/pen/NWbmdbX)
 
 
-## 
+## JavaScript Library Integration
+React is only concerned with creating views  
+requires coordination with other JS libraries  
+
+### React with jQuery
+don't do it; directly manipulating the DOM leads to side effects
+
+### Making Requests with Fetch
+`fetch` allows you to write API calls with promises  
+natively supported or polfill with `isomorphic-fetch`  
+`npm install isomorphic-fetch --save`  
+[fetch countries](https://codepen.io/nathan-pham/pen/NWbmdbX)
+
+### Incorporating a D3 Timeline
+Data Drive Documents (D3): JS framework for data visualizations  
+`npm install d3 --save`
+
