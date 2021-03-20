@@ -139,3 +139,30 @@ dispatcher: provides instructions & data to make a change
 data flow: action -> dispatcher -> store -> view
 
 ### Views
+React stateless component  
+Class components are not necessary (unless you need a lifecycle hook)  
+
+### Actions & Action Creators
+provide instructions to the store to modify state  
+action creators: abstract details to build actions  
+* at minimum contain a *type*  
+
+### Dispatcher
+only *one* dispatcher  
+takes actions and sends it to a store  
+Flux is not a framework but it does include a `Dispatcher` class  
+```js
+import Dispatcher from "flux"
+class CountdownDispatcher extends Dispatcher {
+    handleAction(action) {
+        console.log("dispatching:", action)
+        this.dispatch({
+            source: "VIEW_ACTION",
+            action
+        })
+    }
+}
+```
+
+### Stores
+objects that contain application logic & state data  
