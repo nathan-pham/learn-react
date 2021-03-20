@@ -120,3 +120,22 @@ outside state management = no class components
 everything but `setState` (localStorage, global variables, more frameworks)
 
 ## Rendering a Clock
+pure functions are easy to maintain; you can just swap out the rendering  
+[functional clock](https://codepen.io/nathan-pham/pen/gOLVrBE)  
+
+## Flux
+alternative state management design pattern  
+data flows in one direction, compliments functional approach  
+pure functions: stateless components  
+stores: manages state data externally  
+* update & store data  
+* only system that can update a view 
+
+action: user input  
+dispatcher: provides instructions & data to make a change  
+* queue actions & dispatch actions to a store  
+* store will modify & update view upon receiving an action  
+
+data flow: action -> dispatcher -> store -> view
+
+### Views
