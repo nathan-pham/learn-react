@@ -101,6 +101,9 @@ Data Drive Documents (D3): JS framework for data visualizations
 higher-order component (HOC): React component that receives another component as an argument  
 * wrap component in a class with state management
 * reuse functionality  
-* wrap components with components
+* wrap components with components  
+
+[fetch people](https://codepen.io/nathan-pham/pen/vYyoGKd)  
+[data component hoc](https://codepen.io/nathan-pham/pen/PobMNzd)
 
 
