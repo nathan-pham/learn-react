@@ -104,6 +104,5 @@ higher-order component (HOC): React component that receives another component as
 * wrap components with components  
 
 [fetch people](https://codepen.io/nathan-pham/pen/vYyoGKd)  
-[data component hoc](https://codepen.io/nathan-pham/pen/PobMNzd)
-
-
+[fetch people hoc](https://codepen.io/nathan-pham/pen/PobMNzd)  
+[expandable hoc](https://codepen.io/nathan-pham/pen/zYogqWZ)
