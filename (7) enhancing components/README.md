@@ -166,3 +166,14 @@ class CountdownDispatcher extends Dispatcher {
 
 ### Stores
 objects that contain application logic & state data  
+not restricted to one object  
+
+## Flux Implementations
+* Flux: Facebook's design pattern; not fully functional and primarily intended to provide a `Dispatcher`
+* Reflux: simplified data flow focusing on actions, stores, and views
+* Flummox: build Flux modules by extending classes
+* Fluxible: Yahoo's isomorphic design pattern
+* Redux: Flux look-alike with functional modularity
+* MobX: observables to change state
+
+Redux is the most popular
