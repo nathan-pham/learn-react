@@ -105,4 +105,18 @@ higher-order component (HOC): React component that receives another component as
 
 [fetch people](https://codepen.io/nathan-pham/pen/vYyoGKd)  
 [fetch people hoc](https://codepen.io/nathan-pham/pen/PobMNzd)  
-[expandable hoc](https://codepen.io/nathan-pham/pen/zYogqWZ)
+[expandable hoc](https://codepen.io/nathan-pham/pen/zYogqWZ)  
+[menu hoc](https://codepen.io/nathan-pham/pen/bGBXpKX)
+
+Higher-order components are great for reusing functionality & abstracting component state/lifecycle  
+More stateless functional components (only UI)
+
+## Managing State Outside of React
+keeping state at the root in large applications makes it difficult to separate data from UI  
+outside state management = no class components  
+* pure functions
+* easier to test & understand 
+
+everything but `setState` (localStorage, global variables, more frameworks)
+
+## Rendering a Clock
