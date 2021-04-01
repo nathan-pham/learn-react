@@ -123,3 +123,52 @@ avoid mutating state & avoid side effects
 ## The Store
 store: holds application state data & state updates  
 only one store  
+`createStore` initializes a new store  
+```js
+import { createStore, combineReducers } from "redux"
+import { colors, sort } from "./reducers"
+
+const initialState = {
+    colors: [ ],
+    sort: "SORTED_BY_TITLE"
+}
+
+const store = createStore(
+    combineReducers({ colors, sort }),
+    initialState
+)
+
+export default store
+```
+change the store by dispatching events
+```js
+import store from "../../store"
+
+store.dispatch({
+    type: "ADD_COLOR",
+    ... 
+})
+```
+stores have handler functions called after a store dispatches an action  
+```js
+const logger = () => console.log(store.getState())
+const unsubscribeLogger = store.subscribe(logger)
+
+// removes listener
+unsubscribeLogger()
+```
+
+### Saving to Local Storage
+`store.subscribe` allows you to cache data into local storage & make data persist in the browser  
+```js
+const store = createStore(
+    combineReducers({ colors, sort }),
+    localStorage.getItem("redux-store")
+        ? JSON.parse(localStorage.getItem("redux-store"))
+        : initialState
+)
+
+store.subscribe(() => {
+    localStorage.setItem("redux-store", JSON.stringify(store.getState()))
+})
+```
