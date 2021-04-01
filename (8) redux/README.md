@@ -172,3 +172,19 @@ store.subscribe(() => {
     localStorage.setItem("redux-store", JSON.stringify(store.getState()))
 })
 ```
+
+## Action Creators
+actions are object literals; you can create functions that simplify the creation of actions  
+```js
+export const rateColor = (id, rating) => ({
+    type: C.RATE_COLOR,
+    rating,
+    id
+})
+
+store.dispatch(rateColor("293228b7-eda6-45cd-a3f0-83eb633175fb", 5))
+```
+
+## Middleware
+middleware: connects different layers or pieces of software  
+allows you to insert functionality before & after actions are dispatched

@@ -1,5 +1,5 @@
+import store, { actions } from "../../store"
 import "./style.css"
-import store from "../../store"
 
 console.log(store.getState())
 

@@ -1,5 +1,6 @@
 import { createStore, combineReducers } from "redux"
 import { colors, sort } from "./reducers"
+import * as actions from "./actions"
 
 const initialState = {
     colors: [],
@@ -18,3 +19,4 @@ store.subscribe(() => {
 })
 
 export default store
+export { actions }
