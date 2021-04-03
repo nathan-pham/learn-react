@@ -201,24 +201,29 @@ import { colors, sort } from "./reducers"
 import defaultState from "./defaultState"
 
 const logger = store => next => action => {
+    let result = {}
     console.groupCollapsed("dispatching", action.type)
     console.log("prev state", store.getState())
     console.log("action", action)
-    next(action)
+    result = next(action)
     console.log("next state", store.getState())
     console.groupEnd()
+    return result
 }
 
 const saver = store => next => action => {
-    next(action)
+    let result = next(action)
     localStorage.setItem("redux-store", JSON.stringify(store.getState()))
+    return result
 }
 
-const storeFactor = (initial=defaultState) => 
+const storeFactory = (initial=defaultState) => 
     applyMiddleware(logger, saver)(createStore)(
         combineReducers({ colors, sort }),
         localStorage.getItem("redux-store")
             ? JSON.parse(localStorage.getItem("redux-store"))
             : initial
     )
+
+export default storeFactory
 ```
