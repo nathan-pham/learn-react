@@ -187,4 +187,4 @@ store.dispatch(rateColor("293228b7-eda6-45cd-a3f0-83eb633175fb", 5))
 
 ## Middleware
 middleware: connects different layers or pieces of software  
-allows you to insert functionality before & after actions are dispatched
+allows you to insert functionality before & after actions are dispatched  

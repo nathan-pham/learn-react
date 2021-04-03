@@ -4,11 +4,11 @@ const ColorForm = () => {
     const submit = (e) => {
         e.preventDefault()
         const [title, color] = [...e.target.querySelectorAll("input")]
-
+        
         store.dispatch(actions.addColor(title.value, color.value))
 
         title.value = ''
-        color.value = "#000000"
+        color.value = "#000"
         title.focus()
     }
 
