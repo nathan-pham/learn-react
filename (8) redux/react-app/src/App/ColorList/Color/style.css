@@ -1,0 +1,35 @@
+.color {
+    border-radius: 2px;
+    padding: 16px;
+    background: #eee;
+    margin: 0 0 16px 0;
+    border: 2px solid #d6d6d6;
+}
+
+.color .color-preview {
+    border-radius: 4px;
+    height: 20px;
+    width: 20px;
+    margin: 0 8px 0 0;
+}
+
+.color header.color-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 0 16px 0;
+}
+
+.color header.color-header h1 {
+    margin: 0;
+}
+
+.color header.color-header > div {
+    display: flex;
+    align-items: center;
+}
+
+.color header.color-header button {
+    margin: 0 24px 0 0;
+}
