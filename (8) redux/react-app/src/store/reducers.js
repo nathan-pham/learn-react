@@ -14,7 +14,8 @@ const color = (state={}, action) => {
     switch(action.type) {
         case C.ADD_COLOR:
             return {
-                ...filter(action, ["id", "title", "color", "timestamp"]),
+                ...action,
+                type: null,
                 rating: 0
             }
         case C.RATE_COLOR:
