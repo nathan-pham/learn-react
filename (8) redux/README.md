@@ -188,3 +188,37 @@ store.dispatch(rateColor("293228b7-eda6-45cd-a3f0-83eb633175fb", 5))
 ## Middleware
 middleware: connects different layers or pieces of software  
 allows you to insert functionality before & after actions are dispatched  
+
+### Applying Middleware to the Store  
+factory: manages the creation of stores  
+```js
+import { 
+    createStore, 
+    combineReducers, 
+    applyMiddleware 
+} from "redux"
+import { colors, sort } from "./reducers"
+import defaultState from "./defaultState"
+
+const logger = store => next => action => {
+    console.groupCollapsed("dispatching", action.type)
+    console.log("prev state", store.getState())
+    console.log("action", action)
+    next(action)
+    console.log("next state", store.getState())
+    console.groupEnd()
+}
+
+const saver = store => next => action => {
+    next(action)
+    localStorage.setItem("redux-store", JSON.stringify(store.getState()))
+}
+
+const storeFactor = (initial=defaultState) => 
+    applyMiddleware(logger, saver)(createStore)(
+        combineReducers({ colors, sort }),
+        localStorage.getItem("redux-store")
+            ? JSON.parse(localStorage.getItem("redux-store"))
+            : initial
+    )
+```
