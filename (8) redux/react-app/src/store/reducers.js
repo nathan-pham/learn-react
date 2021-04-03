@@ -1,15 +1,5 @@
 import C from "./constants"
 
-const filter = (action, allowed=[]) => {
-    let result = {}
-    for(const key of allowed) {
-        if(action.hasOwnProperty(key)) {
-            result[key] = action[key]
-        }
-    }
-    return result
-}
-
 const color = (state={}, action) => {
     switch(action.type) {
         case C.ADD_COLOR:
