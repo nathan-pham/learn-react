@@ -1,14 +1,9 @@
-import { color } from "../../../../(8) redux/react-app/src/store/reducers"
 import C from "./constants"
 
 const post = (state={}, action) => {
     switch(action.type) {
         case C.ADD_POST:
-            return {
-                ...action,
-                type: null,
-                like: false
-            }
+            return Object.assign({}, action, { type: null })
         case C.LIKE_POST:
             return state.id == action.id
                 ? { ...state, like: !state.like }
