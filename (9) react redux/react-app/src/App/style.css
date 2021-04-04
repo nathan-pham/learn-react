@@ -1,6 +1,7 @@
 :root {
   --primary: #1da1f2;
-  --divider: #2f3336;
+  --divider: #282c2f;
+  --divider-background: #15181c;
   --background: #000;
   --placeholder: #686f76;
 }
@@ -23,6 +24,7 @@ html, body {
 
 .app-wrapper {
   max-width: 45rem;
-  padding: 1rem;
   margin: 0 auto;
+  border-left: 0.1rem solid var(--divider);
+  border-right: 0.1rem solid var(--divider);
 }

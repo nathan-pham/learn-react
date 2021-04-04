@@ -1,0 +1,11 @@
+.route {
+    padding: 1rem;
+    border-bottom: 0.1rem solid var(--divider);
+}
+
+.route h1 {
+    font-weight: bolder;
+    color: #fff;
+    margin: 0;
+    font-size: 1.4rem;
+}
