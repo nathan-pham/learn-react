@@ -1,3 +1,10 @@
+:root {
+  --primary: #1da1f2;
+  --divider: #2f3336;
+  --background: #000;
+  --placeholder: #686f76;
+}
+
 html, body {
   padding: 0;
   margin: 0;
@@ -7,8 +14,15 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  background-color: var(--background);
 }
 
 *, ::before, ::after {
   box-sizing: inherit;
+}
+
+.app-wrapper {
+  max-width: 45rem;
+  padding: 1rem;
+  margin: 0 auto;
 }

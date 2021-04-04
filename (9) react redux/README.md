@@ -7,8 +7,8 @@ works well for small apps
 ```js
 import React from "react"
 import { render } from "react-dom"
-import App from "./App"
 import storeFactory from "./store"
+import App from "./App"
 
 const store = storeFactory()
 
@@ -35,7 +35,7 @@ import App from "./App"
 ReactDOM.render(
     <Provider store={ store }>
         <App />
-    </Provider>
+    </Provider>,
     document.getElementById("root")
 )
 ```
