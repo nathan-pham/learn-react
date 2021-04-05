@@ -220,4 +220,3 @@ installs React, ReactDOM, and react-scripts
 * src/App.js is where you import & edit components
 * run `npm start` to initialize a live preview
 * run `npm build` to make production-ready bundles
-
