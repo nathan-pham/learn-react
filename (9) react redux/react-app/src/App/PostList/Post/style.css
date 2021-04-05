@@ -1,0 +1,64 @@
+.post {
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--divider);
+}
+
+.post .body-wrapper {
+    display: flex;
+}
+
+.post img {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    margin: 0 1rem 0 0;
+}
+
+.post .body {
+    width: 100%;
+    color: #fff;
+}
+
+.post .body .username {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.post .body .handle {
+    font-weight: 400;
+    color: var(--handle);
+}
+
+.post .body p {
+    margin: 0.25rem 0 0 0;
+}
+
+.post .options {
+    width: 100%;
+    text-align: right;
+}
+
+.post .options svg {
+    color: #666e74;
+    height: 1.5rem;
+    cursor: pointer;
+    transition: color 0.1s ease;
+}
+
+.post .options svg.filled {
+    fill: red;
+}
+
+.post .options svg:hover {
+    color: red;
+}
+/*
+<article className="post">
+        <img src="https://media-exp1.licdn.com/dms/image/C5603AQGPVc6OH9Z25A/profile-displayphoto-shrink_200_200/0/1602999352112?e=1623283200&v=beta&t=PfcaM5JLCjL-4Uw8ZGMfTa2mZdE7K0guQreozriiOaQ" alt="profile picture" />
+        <div>
+            <h3 className="username">Nathan Pham <span className="handle">@phamn23</span></h3>
+            <p>{ title }</p>
+        </div>        
+    </article>
+*/

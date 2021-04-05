@@ -8,7 +8,7 @@ const selectPosts = state => state.posts
 
 const App = () => {
     const posts = useSelector(selectPosts)
-    console.log(posts)
+
     return (
         <div className="app-wrapper">
             <Route />

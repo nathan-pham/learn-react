@@ -23,7 +23,7 @@ const posts = (state=[], action) => {
         case C.REMOVE_POST:
             return state.filter(p => p.id !== action.id)
         case C.LIKE_POST:
-            return state.map(p => color(p, action))
+            return state.map(p => post(p, action))
         default:
             return state
     }
