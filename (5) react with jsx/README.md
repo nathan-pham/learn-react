@@ -214,8 +214,8 @@ module.exports = {
 ## create-react-app
 CLI used to generate a React project  
 `npm install -g create-react-app`  
-`create-react-app .`
-installs Rect, ReactDOM, and react-scripts
+`create-react-app .`  
+installs React, ReactDOM, and react-scripts
 * react-scripts: autoinstalls Webpack, Babel, ESLint, etc.  
 * src/App.js is where you import & edit components
 * run `npm start` to initialize a live preview
