@@ -9,4 +9,4 @@ I excluded sections of the book that were either redundant (covering standard Ja
 - chapter 10: testing apps with Jest  
 
 ## react-app
-I created demos for new theories and concepts on [Codepen.io](https://codepen.io), a fast prototyping web development tool. Many of the chapter folders also contain a sub-directory called `react-app`, which includes a simple React setup to display concepts (configuring Webpack, component file structure, creating Redux dispatchers) that required a Node.js environment.
+I created demos for new theories and concepts on [codepen.io](https://codepen.io), a fast prototyping web development tool. Many of the chapter folders also contain a sub-directory called `react-app`, created to display concepts (configuring Webpack, component file structure, creating Redux dispatchers) requiring a Node.js environment.
