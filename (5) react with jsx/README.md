@@ -19,7 +19,7 @@ rules are similar to HTML
 self closing tags  
 
 ### Nested Components
-you can have need child compnents  
+you can have child compnents  
 ```js
 <IngredientsList>
     <Ingredient />
