@@ -1,5 +1,5 @@
 # Learn React
-Notes adapted from the book, __Learing React__. While the book is a good resource, many of the methods described are deprecated or obselete. 
+Notes adapted from the book, __Learning React__. While the book is a good resource, many of the methods described are deprecated or obselete. 
 
 ## Excluded Chapters
 I excluded sections of the book that were either redundant (covering standard JavaScript) or obselete (React and its recommended practices have changed). Chapters I intentionally removed include: 
